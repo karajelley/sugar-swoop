@@ -1,32 +1,73 @@
-// Enemy classes inheriting from Interactable
+// Cotton Candy Clouds class inheriting from Interactable
 class CottonCandyCloud extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
-        element.className = "cotton-candy-cloud"; // Set class name for CSS
-        element.innerText = "☁️"; // Visual representation
+        element.className = "cotton-candy-cloud";
+        element.innerText = "☁️"; // Add visual representation
+        super(element, speed); // Initialize the base class
 
-        super(speed);
-        this.element = element; // Assign the newly created element
-/*         this.element.className = "cotton-candy-cloud";
-        this.element.innerText = "☁️"; */
-        game.gameArea.appendChild(this.element);
-        this.updatePosition();
+        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
+        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+
+        this.updatePosition(); // Set initial position
+
     }
 
-    updatePosition() {
-        this.element.style.left = `${this.left}px`;
-        this.element.style.top = `${this.top}px`;
-    }
-
+    
     // Override the crash behavior
     handleCrash() {
         // Slow the player down
-        player.speed = player.speed / 2; // Slow down the player
+        player.speed = player.speed / 5; // Slow down the player
         setTimeout(() => {
-            player.speed *= 2; // Restore speed after 5 seconds or any desired duration
-        }, 5000);
+            player.speed *= 5; // Restore speed after 5 seconds or any desired duration
+        }, 3000);
+        if (game.score >= 5) {
+            game.decreaseScore(5)
+        }
     }
-
+    
 }
 
-let cottonCandyCloud = new CottonCandyCloud(10);
+function createCottonCandyCloud(){
+    new CottonCandyCloud(2);
+    }
+setInterval(createCottonCandyCloud, 4000);
+
+
+//// Candy Lightning Boltsclass inheriting from Interactable
+
+class CandyLighteningBolt extends Interactable {
+    constructor(speed) {
+        const element = document.createElement("div");
+        element.className = "candy-lightening-bolt";
+        element.innerText = "⚡️";
+        super(element, speed);
+
+        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
+        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+
+        this.updatePosition(); // Set initial position
+
+    }
+
+    
+    // Override the crash behavior
+    handleCrash() {
+        // Slow the player down
+        player.speed = player.speed / 25; // Slow down the player
+        setTimeout(() => {
+            player.speed *= 25; // Restore speed after 5 seconds or any desired duration
+        }, 3000);
+        if (game.score >= 10) {
+            game.decreaseScore(10)
+        } else if (game.score >= 5 && game.score < 10) {
+            game.score === 0;
+        }
+    }
+    
+}
+
+function createCandyLighteningBolt(){
+    new CandyLighteningBolt(2);
+    }
+setInterval(createCandyLighteningBolt, 5000);

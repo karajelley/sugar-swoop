@@ -1,12 +1,13 @@
 class Player extends Character {
-    constructor(element, speed) {
-        super(element, speed)
+  constructor(element, speed) {
+    super(element, speed);
+    this.top = (game.height / 2) - (this.element.offsetHeight / 2); 
+    this.left = (game.width / 2) - (this.element.offsetWidth / 2); 
 
-        this.top = (game.height / 2) - (this.height / 2); // Initial position centered vertically
-        this.left = (game.width / 2) - (this.width / 2); // Initial position horizontally
+    this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
+    this.height = this.element.offsetHeight; // Use offsetHeight to get the height
 
-        this.direction = null; // Initialize direction
-        this.updatePosition(); // Set initial position
+    this.updatePosition(); // Set initial position
     }
 
     move() {
@@ -41,10 +42,10 @@ class Player extends Character {
               break;
           }
 
-          this.updatePosition(); // Update the player's position on the screen
+          this.updatePosition(this.element); // Update the player's position on the screen
     }
 }
 
 // we create the new player to keep track of all the properties
-let player = new Player('#player', 10);
+let player = new Player('#player', 5);
 

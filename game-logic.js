@@ -46,17 +46,12 @@ document.addEventListener("keydown", (e) => {
       frames++;
       player.move();
 
-      game.interactableArray.forEach(interactable => {
+      game.interactableArray.forEach((interactable) => {
         interactable.move();
-    });
-  /*     game.enemies.forEach((enemy) => {
-        enemy.move();
-        crashTest(enemy);
-      }); */
-      //   console.log(frames);
+        crashTest(interactable);
+      });
 /*       if (frames % 100 === 0) {
-        // this is going to run every 100 frames
-        new Enemy();
+        new CottonCandyCloud();
       }
       if (frames % 500 === 0) {
         game.level++;

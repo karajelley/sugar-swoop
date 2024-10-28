@@ -30,6 +30,12 @@ The game will have three different types of enemies.
 -Candy Lightning Bolts: Slows the player down significantly
 -Candy Bandits: Cause the player to lose a life
 
+#### PowerUps
+The game will have three different types of powerups.
+-Candy Coins (fanned wrapper candies): Gives the player 5 points
+-Lollipop Tokens: Gives the player 10 points and speeds them up
+-Candy Hearts: Gives players an extra life
+
 ### Game
 
 The game class controls all the game logic. It will have the following attributes:
@@ -51,3 +57,9 @@ The Player can gain points by collecting candy. They can also gain lives by coll
 - Create enemy class and methods
 - Create gamae logic
 - Style characters, game area and gameplay.
+
+## Bugs
+- player doesn't smoothly transition on vertical axis 
+- don't let interactables appear on top of one another
+- Aura font not working
+- Scoring is not right. If score is 5 and hits a lightening bold (-10) score stays at 5 and should go to 0.
