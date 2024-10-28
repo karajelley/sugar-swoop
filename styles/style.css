@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+background-color: ffff;
+
+}
+
+#outer-border {
+display: flex;
+justify-content: center;
+align-items: center; 
+margin: 0 auto;
+height: 100vh;
+width: 100vw;
+position: relative;
+overflow: hidden;
+background-image: url("../assets/stripes_bg.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+border-radius: 15px;
+
+}
+
+#game-area {
+margin: 0 auto;
+height: 90vh;
+width: 95vw;
+position: relative;
+overflow: hidden;
+/*     background-image: url("../assets/sugar-bg.webp"); */
+background-color: #ffdaec;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+border-radius: 15px;
+}
+
+#game-over {
+position: absolute;
+top: 50%;
+left: 50%;
+z-index: 4;
+font-family: monospace;
+font-size: 60px;
+color: rgb(255, 255, 255);
+transform: translate(-50%, -50%);
+padding: 3rem;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+display: none;
+width: 100vw;
+height: 100vh;
+backdrop-filter: blur(2px);
+text-shadow: 1px 1px 2px red, 0 0 1em rgb(115, 115, 255),
+    0 0 0.2em rgb(0, 183, 255);
+}
+
+/*     #player,
+.enemy,
+.enemy2 {
+width: 4rem;
+height: 6rem;
+position: absolute;
+z-index: 1;
+top: 0;
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+left: 0;
+} */
+
+#player {
+background-color: blueviolet;
+height: 60px;
+width: 60px;
+position: absolute;
+top: 0;
+left: 0;
+
+}
+
+.interactable {
+    background-color: rgb(235, 23, 23);
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+
+.cotton-candy-clouds {
+    background-color: rgb(82, 156, 221);
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
