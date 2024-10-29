@@ -61,5 +61,4 @@ The Player can gain points by collecting candy. They can also gain lives by coll
 ## Bugs
 - player doesn't smoothly transition on vertical axis 
 - don't let interactables appear on top of one another
-- Aura font not working
-- Scoring is not right. If score is 5 and hits a lightening bold (-10) score stays at 5 and should go to 0.
+- Sugar Swoop Game Title

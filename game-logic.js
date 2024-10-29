@@ -37,7 +37,7 @@ document.addEventListener("keydown", (e) => {
         break;
     }
   });
-  
+
 
   let frames = 0;
 
@@ -50,16 +50,23 @@ document.addEventListener("keydown", (e) => {
         interactable.move();
         crashTest(interactable);
       });
-/*       if (frames % 100 === 0) {
-        new CottonCandyCloud();
-      }
-      if (frames % 500 === 0) {
+
+      if (frames % 2000 === 0) {
         game.level++;
         game.updateLevel();
-      } */
+        setInterval(createCandyLighteningBolt, 30000)
+        setInterval(createCandyBandit, 25000);
+        setInterval(CandyCoin, 20000)
+        new CottonCandyCloud(2);
+      }
+
+      
       requestAnimationFrame(gameLoop);
     }
   }
+  
+  requestAnimationFrame(gameLoop);
+
 
   function crashTest(interactable) {
     const playerLeftEdge = player.left;
@@ -78,12 +85,44 @@ document.addEventListener("keydown", (e) => {
         playerTopEdge < interactableBottomEdge &&
         playerBottomEdge > interactableTopEdge
     ) {
-        // Call the interactable's handleCrash method
         interactable.handleCrash(); 
-        interactable.destroy(); // Destroy the interactable
+        interactable.destroy();
+ /*        appearPowElement(interactable.left, interactable.top); */
+        if (game.lives <= 0) {
+            game.isGameOver = true;
+            game.gameOverScreen.style.display = "flex";
+          }
+
        // appearPowElement(enemy.left, enemy.top);
     }
 }
 
+function restartGame() {
+    game.gameOverScreen.style.display = "none";
+    game = new Game();
+    player = new Player('#player', 5);
+    requestAnimationFrame(gameLoop);
+  }
+  
+  const restartButtonElement = document.querySelector("#restart-game");
+  
+  restartButtonElement.addEventListener("click", () => {
+    window.location.reload()
+    restartGame();
+  });
 
-  requestAnimationFrame(gameLoop);
+/*   function appearPowElement(left, top) {
+    const powElement = document.createElement("div");
+    powElement.classList.add("pow");
+    powElement.style.left = left + "px";
+    powElement.style.top = top + "px";
+    game.gameArea.appendChild(powElement);
+    game.gameArea.classList.add("shake");
+  
+    setTimeout(() => {
+      powElement.remove();
+      game.gameArea.classList.remove("shake");
+    }, 300);
+  } */
+
+

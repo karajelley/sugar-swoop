@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'Aura-Seraph';
-    src: url('./assets/aura-seraph-font/AuraSeraphRegular-own3z.ttf') format('truetype');
+    src: url('../assets/aura-seraph-font/AuraSeraphRegular-own3z.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -29,29 +29,33 @@ height: 100vh;
 width: 100vw;
 position: relative;
 overflow: hidden;
-background-image: url("../assets/stripes_bg.png");
+background-image: url("../assets/bg-v6.png");
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
-border-radius: 15px;
 
 }
 
 #game-area {
 margin: 0 auto;
-height: 90vh;
-width: 95vw;
+height: 88vh;
+width: 93vw;
 position: relative;
 overflow: hidden;
-/*     background-image: url("../assets/sugar-bg.webp"); */
-background-color: #ffdaec;
+background-color:  rgb(255, 232, 243, 0.60);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 border-radius: 15px;
+backdrop-filter: blur(4px);
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+/* filter: blur(10px); */
+z-index: 1;
 }
 
+
 #game-over {
+background-color: #000000b2;
 position: absolute;
 top: 50%;
 left: 50%;
@@ -69,32 +73,35 @@ display: none;
 width: 100vw;
 height: 100vh;
 backdrop-filter: blur(2px);
-text-shadow: 1px 1px 2px red, 0 0 1em rgb(115, 115, 255),
-    0 0 0.2em rgb(0, 183, 255);
+text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
+    0 0 0.2em #FF1887;
 }
 
-/*     #player,
-.enemy,
-.enemy2 {
-width: 4rem;
-height: 6rem;
-position: absolute;
-z-index: 1;
-top: 0;
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
-left: 0;
-} */
+#restart-game {
+    background-color: #ffffff; /* Match the background color */
+    font-family: monospace; /* Match the font */
+    font-size: 20px; /* Adjust font size as needed */
+    color: #FF1887; /* White color for text */
+    padding: 1rem 2rem; /* Padding to make it look nice */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add slight rounding to corners */
+    cursor: pointer; /* Show pointer on hover */
+    font-weight: 600;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#restart-game:hover {
+    background-color: rgb(179, 179, 179); /* Change background on hover */
+}
+
 
 #player {
-background-color: blueviolet;
-height: 60px;
-width: 60px;
-position: absolute;
-top: 0;
-left: 0;
-
+    background-image: url("../assets/player-v1.png");
+    position: absolute;
+    background-size: cover; /* or contain */
+    background-position: center; /* Adjust as needed */
+    width: 90px; /* Set the width */
+    height: 90px; /* Set the height */
 }
 
 .interactable {
@@ -104,17 +111,32 @@ left: 0;
     position: absolute;
 }
 
+
 .cotton-candy-cloud {
-    background-color: rgb(253, 121, 191);
-    height: 40px;
-    width: 40px;
+    height: 65px;
+    width: 65px;
     position: absolute;
+    background-image: url("../assets/candyCaneCloud.png");
+    position: absolute;
+    background-size: cover; /* or contain */
+    background-position: center; /* Adjust as needed */
+
 }
 
 .candy-lightening-bolt {
-    background-color: rgb(255, 174, 0);
-    height: 50px;
-    width: 20px;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    background-image: url("../assets/candyLighteningBolts.png");
+    position: absolute;
+    background-size: cover; /* or contain */
+    background-position: center; /* Adjust as needed */
+}
+
+.candy-bandit {
+    background-color: rgb(0, 0, 0);
+    height: 25px;
+    width: 25px;
     position: absolute;
 }
 
@@ -125,7 +147,57 @@ left: 0;
     position: absolute;
 }
 
-#score {
-    font-family: var(--main-font);
+.lollipop-token {
+    background-color: rgb(0, 255, 255);
+    height: 10px;
+    width: 10px;
+    position: absolute;
+
 }
+
+.candy-heart {
+    background-color: rgb(255, 255, 255);
+    height: 15px;
+    width: 15px;
+    position: absolute;
+}
+
+.bullet {
+    background-color: rgb(0, 0, 0);
+    height: 15px;
+    width: 15px;
+    position: absolute;
+}
+
+.game-stats {
+    display: flex;
+    gap: 20px;
+    position: absolute; /* Allows for easy positioning */
+/*     align-items: center;
+    justify-content: center; */
+    top: 20px; /* Moves the section down from the top of the screen */
+    left: 20px; /* Moves it away from the left edge */
+    padding: 15px; /* Adds space inside the box */
+    background-color: rgba(255, 232, 243, 0.6); /* Light transparent background */
+    border-radius: 10px; /* Rounds the corners */
+    color: #FF1887; /* Makes the text stand out */
+    font-size: 28px; /* Adjust font size if needed */
+    font-family: var(--main-font);
+    z-index: 1;
+}
+
+#lives {
+    display: flex;
+    font-size: 20px;
+    padding-left: 0px;
+    gap: 20px;
+}
+
+#level, #score {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
 

@@ -3,9 +3,8 @@ class CottonCandyCloud extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
         element.className = "cotton-candy-cloud";
-        element.innerText = "☁️"; // Add visual representation
+        element.innerText = ""; // Add visual representation
         super(element, speed); // Initialize the base class
-
         this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
         this.height = this.element.offsetHeight; // Use offsetHeight to get the height
 
@@ -13,7 +12,6 @@ class CottonCandyCloud extends Interactable {
 
     }
 
-    
     // Override the crash behavior
     handleCrash() {
         // Slow the player down
@@ -23,24 +21,27 @@ class CottonCandyCloud extends Interactable {
         }, 3000);
         if (game.score >= 5) {
             game.decreaseScore(5)
+        } else {
+            game.score = 0;
+            game.updateScore();
         }
     }
     
 }
 
 function createCottonCandyCloud(){
-    new CottonCandyCloud(2);
+    new CottonCandyCloud(1);
     }
-setInterval(createCottonCandyCloud, 4000);
+setInterval(createCottonCandyCloud, 6000);
 
 
-//// Candy Lightning Boltsclass inheriting from Interactable
+//// Candy Lightning Bolts class inheriting from Interactable
 
 class CandyLighteningBolt extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
         element.className = "candy-lightening-bolt";
-        element.innerText = "⚡️";
+        element.innerText = "";
         super(element, speed);
 
         this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
@@ -58,16 +59,50 @@ class CandyLighteningBolt extends Interactable {
         setTimeout(() => {
             player.speed *= 25; // Restore speed after 5 seconds or any desired duration
         }, 3000);
-        if (game.score >= 10) {
+        if (game.score > 10) {
             game.decreaseScore(10)
-        } else if (game.score >= 5 && game.score < 10) {
-            game.score === 0;
+        } else {
+            game.score = 0;
+            game.updateScore();
         }
     }
     
 }
 
 function createCandyLighteningBolt(){
-    new CandyLighteningBolt(2);
+    new CandyLighteningBolt(.75);
     }
-setInterval(createCandyLighteningBolt, 5000);
+setInterval(createCandyLighteningBolt, 9000);
+
+
+
+
+//// Candy Bandit class inheriting from Interactable
+
+class CandyBandit extends Interactable {
+    constructor(speed) {
+        const element = document.createElement("div");
+        element.className = "candy-bandit";
+        element.innerText = "😈";
+        super(element, speed);
+
+        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
+        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+
+        this.updatePosition(); // Set initial position
+
+    }
+
+    
+    // Override the crash behavior
+    handleCrash() {
+        // Slow the player down
+        game.decreaseLives(1);
+    }
+    
+}
+
+function createCandyBandit(){
+    new CandyBandit(1);
+    }
+setInterval(createCandyBandit, 10000);
