@@ -39,6 +39,25 @@ document.addEventListener("keydown", (e) => {
   });
 
 
+  let isShooting = false; // To track if the space bar is pressed
+
+    // Keydown event for shooting
+    document.addEventListener('keydown', (event) => {
+        if (event.code === 'Space') {
+            isShooting = true; // Set to true when the space bar is pressed
+            createBullet();
+        }
+    });
+
+    // Keyup event to stop shooting
+    document.addEventListener('keyup', (event) => {
+        if (event.code === 'Space') {
+            isShooting = false; // Set to false when the space bar is released
+        }
+    });
+
+
+
   let frames = 0;
 
   function gameLoop() {
@@ -51,14 +70,24 @@ document.addEventListener("keydown", (e) => {
         crashTest(interactable);
       });
 
+      game.bulletArray.forEach((bullet) => {
+        bullet.move();
+        game.interactableArray.forEach((interactable) => {
+            if (crashBullet(bullet, interactable)) { // Assuming crashBullet takes both as parameters
+                interactable.handleBullet(bullet); // Trigger unique behavior for the bullet
+                interactable.destroy(); // Destroy the interactable on collision
+                bullet.destroy(); // Destroy the bullet on collision
+            }
+        });
+      })
+
       if (frames % 2000 === 0) {
         game.level++;
         game.updateLevel();
         setInterval(createCandyLighteningBolt, 30000)
         setInterval(createCandyBandit, 25000);
-        setInterval(CandyCoin, 20000)
-        new CottonCandyCloud(2);
-      }
+        setInterval(createCandyCoin, 20000)
+      } 
 
       
       requestAnimationFrame(gameLoop);
@@ -94,6 +123,29 @@ document.addEventListener("keydown", (e) => {
           }
 
        // appearPowElement(enemy.left, enemy.top);
+    }
+}
+
+function crashBullet(bullet, interactable) {
+    const bulletLeftEdge = bullet.left;
+    const bulletRightEdge = bullet.left + bullet.width;
+    const bulletTopEdge = bullet.top;
+    const bulletBottomEdge = bullet.top + bullet.height;
+
+    const interactableLeftEdge = interactable.left;
+    const interactableRightEdge = interactable.left + interactable.width;
+    const interactableTopEdge = interactable.top; 
+    const interactableBottomEdge = interactable.top + interactable.height;
+
+    if (
+        bulletLeftEdge < interactableRightEdge &&
+        bulletRightEdge > interactableLeftEdge &&
+        bulletTopEdge < interactableBottomEdge &&
+        bulletBottomEdge > interactableTopEdge
+    ) {
+        bullet.destroy();
+        interactable.destroy();
+        interactable.handleBullet();
     }
 }
 

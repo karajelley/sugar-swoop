@@ -8,7 +8,7 @@ class Game {
       this.width = this.gameArea.getBoundingClientRect().width;
       this.height = this.gameArea.getBoundingClientRect().height;
       this.interactableArray = [];
-      /* this.bulletArray[]; */
+      this.bulletArray = [];
       this.scoreElement = document.querySelector("#score");
       this.livesElement = document.querySelector("#lives");
       this.levelElement = document.querySelector("#level");

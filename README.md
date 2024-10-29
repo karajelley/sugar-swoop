@@ -62,3 +62,12 @@ The Player can gain points by collecting candy. They can also gain lives by coll
 - player doesn't smoothly transition on vertical axis 
 - don't let interactables appear on top of one another
 - Sugar Swoop Game Title
+- Add music
+
+## Left Off
+- Bullets function not working. A bullet is moving when I hit the spacebar and simultaneously being deleted. I also cannot see it anywhere despite it having CSS. Not sure if the crashBullet is working either. 
+- If you get bullet function working you will need to add handleBullet methods to all the interactables (where appropriate).
+
+- Add other interactable's designs 
+- Add start screen
+- Fix presentation
