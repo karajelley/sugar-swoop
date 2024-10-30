@@ -18,7 +18,7 @@ class Game {
     }
   
     updateLives() {
-      this.livesElement.innerText = "❤️".repeat(this.lives);
+      this.livesElement.innerText = "❤️" .repeat(this.lives);
     }
 
 

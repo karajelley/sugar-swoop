@@ -1,5 +1,5 @@
 //Bullet class
-class Fire extends Character {
+/* class Fire extends Character {
   constructor(element, speed) {
       super(element, speed); // Initialize the base class
       this.left = player.width - (player.left / 2); 
@@ -59,8 +59,54 @@ class Bullet extends Fire {
 
   }
   
+} */
+
+
+  class Bullet extends Character {
+    constructor(player) {
+        const element = document.createElement('div');
+        element.className = 'bullet'; // Assign the 'bullet' CSS class
+        super(element, 10); // Speed is set here (you can adjust it)
+        
+        // Position bullet at the bottom of the player
+        this.left = player.left + (player.width / 2) - (this.element.offsetWidth / 2);
+        this.top = player.top + player.height;
+        
+        // Add the bullet to the game area
+        game.gameArea.appendChild(this.element);
+        game.bulletArray.push(this);
+        
+        this.width = this.element.offsetWidth;  // Set bullet width
+        this.height = this.element.offsetHeight; // Set bullet height
+    }
+
+    move() {
+      console.log("Bullet moving!")
+        this.top += this.speed; // Move bullet upwards
+        this.updatePosition(); // Update the bullet's position on the screen
+
+        // Destroy if it goes off-screen
+        if (this.top >= game.height) {
+            this.destroy();
+        }
+    }
+
+    destroy() {
+      console.log("deleting bullet");
+        // Remove the bullet from the DOM
+        this.element.remove();
+
+        // Remove the bullet from the array
+        const index = game.bulletArray.indexOf(this);
+        if (index > -1) {
+            game.bulletArray.splice(index, 1);
+        }
+    }
 }
 
-function createBullet(){
-  new Bullet(5);
+
+function createBullet() {
+  if (isShooting) {
+      new Bullet(player);
   }
+}

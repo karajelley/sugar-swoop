@@ -26,6 +26,10 @@ class CottonCandyCloud extends Interactable {
             game.updateScore();
         }
     }
+
+    handleBullet() {
+        game.increaseScore(5);
+    }
     
 }
 
@@ -66,6 +70,10 @@ class CandyLighteningBolt extends Interactable {
             game.updateScore();
         }
     }
+
+    handleBullet() {
+        game.increaseScore(10);
+    }
     
 }
 
@@ -83,7 +91,7 @@ class CandyBandit extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
         element.className = "candy-bandit";
-        element.innerText = "😈";
+        element.innerText = "";
         super(element, speed);
 
         this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
@@ -98,6 +106,10 @@ class CandyBandit extends Interactable {
     handleCrash() {
         // Slow the player down
         game.decreaseLives(1);
+    }
+
+    handleBullet() {
+        game.increaseScore(20);
     }
     
 }

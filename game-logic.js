@@ -1,5 +1,11 @@
 // this file is in charge of all the game logic, event listeners, etc
 
+
+window.onload = function() {
+    document.getElementById('game-start').style.display = 'flex'; // Show the start screen
+};
+
+
 //allowing the player to move with arrow keys
 document.addEventListener("keydown", (e) => {
     console.log(e.key)
@@ -57,7 +63,6 @@ document.addEventListener("keydown", (e) => {
     });
 
 
-
   let frames = 0;
 
   function gameLoop() {
@@ -85,7 +90,7 @@ document.addEventListener("keydown", (e) => {
         game.level++;
         game.updateLevel();
         setInterval(createCandyLighteningBolt, 30000)
-        setInterval(createCandyBandit, 25000);
+        setInterval(createCandyBandit, 10000);
         setInterval(createCandyCoin, 20000)
       } 
 
@@ -94,7 +99,7 @@ document.addEventListener("keydown", (e) => {
     }
   }
   
-  requestAnimationFrame(gameLoop);
+ /*  requestAnimationFrame(gameLoop); */
 
 
   function crashTest(interactable) {
@@ -149,19 +154,50 @@ function crashBullet(bullet, interactable) {
     }
 }
 
+
+/* GAME OVER RESTART GAME */
 function restartGame() {
     game.gameOverScreen.style.display = "none";
     game = new Game();
     player = new Player('#player', 5);
     requestAnimationFrame(gameLoop);
-  }
+}
   
-  const restartButtonElement = document.querySelector("#restart-game");
+const restartButtonElement = document.querySelector("#restart-game");
   
-  restartButtonElement.addEventListener("click", () => {
-    window.location.reload()
-    restartGame();
-  });
+restartButtonElement.addEventListener("click", () => {
+window.location.reload()
+restartGame();
+});
+ 
+
+/* START GAME */
+function startGame() {
+document.getElementById('game-start').style.display = 'none'; // Hide the start screen
+game = new Game(); // Initialize the game
+player = new Player('#player', 5); // Initialize the player
+requestAnimationFrame(gameLoop); // Start the game loop
+}
+
+const startButtonElement = document.getElementById('start-game');
+startButtonElement.addEventListener('click', startGame);
+
+function displayHowToPlay() {
+    document.getElementById('how-screen').style.display = 'flex';
+    document.getElementById('game-start').style.display = 'none';
+};
+
+const howButtonElement = document.getElementById('how-to-play');
+howButtonElement.addEventListener('click', displayHowToPlay);
+
+function closeHowToPlay() {
+    document.getElementById('how-screen').style.display = 'none';
+    document.getElementById('game-start').style.display = 'flex';
+};
+
+const closeButtonElement = document.getElementById('close-button');
+closeButtonElement.addEventListener('click', closeHowToPlay);
+
 
 /*   function appearPowElement(left, top) {
     const powElement = document.createElement("div");

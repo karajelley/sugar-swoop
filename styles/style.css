@@ -16,7 +16,6 @@
 }
 
 body {
-background-color: ffff;
 
 }
 
@@ -28,7 +27,6 @@ margin: 0 auto;
 height: 100vh;
 width: 100vw;
 position: relative;
-overflow: hidden;
 background-image: url("../assets/bg-v6.png");
 background-size: cover;
 background-position: center;
@@ -53,6 +51,234 @@ box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 z-index: 1;
 }
 
+#game-start {
+    background-color: rgba(250, 202, 219, 0.3);
+/*     background-image: url("../assets/startGame-layover-5.png"); */
+    position: absolute;
+    background-size: cover; 
+    background-position: center; 
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    font-family: var(--main-font);
+    font-size: 150px;
+    color: #FF1887;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    text-align: center;
+/*     text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
+        0 0 0.2em #FF1887; */
+        /*     text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
+        0 0 0.2em #FF1887; */
+}
+
+#start-card {
+    display: flex;
+    height: 500px;
+    width: 500px;
+    background-color: #fff1f8;
+    background-image: url("../assets/startCard-v2.png");
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 3rem;
+    line-height: 0.7;
+    background-size: cover; 
+    background-position: center; 
+}
+
+#start-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+    
+
+#start-game {
+    width: 205px;
+    background-color: #FF1887; /* Match the background color */
+    font-family: monospace; /* Match the font */
+    font-size: 20px; /* Adjust font size as needed */
+    color: #ffffff; /* White color for text */
+    padding: 1rem 2rem; /* Padding to make it look nice */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add slight rounding to corners */
+    cursor: pointer; /* Show pointer on hover */
+    font-weight: 600;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+#start-game:hover {
+    background-color: #D00667; /* Change background on hover */
+}
+
+
+#how-to-play {
+    width: 205px;
+    height: auto;
+    background-color: transparent; /* Transparent background */
+    color: #FF1887; /* Pink color for text */
+    border: 2px solid #FF1887; /* Pink border */
+    font-family: monospace; /* Match the font */
+    font-size: 20px; /* Adjust font size as needed */
+    padding: 1rem 2rem; /* Padding to make it look nice */
+    border-radius: 5px; /* Add slight rounding to corners */
+    cursor: pointer; /* Show pointer on hover */
+    font-weight: 600;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#how-to-play:hover {
+    background-color: #E8C0D3; /* Change background on hover */
+}
+
+
+#how-screen {
+    background-color: rgba(250, 202, 219, 0.3);
+
+    position: absolute;
+    background-size: cover; 
+    background-position: center; 
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    font-family: var(--main-font);
+    font-size: 150px;
+    color: #FF1887;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+/* #how-card {
+    display: flex;
+    max-width: 1000px;
+    height: auto;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff1f8;
+    background-image: url("../assets/startCard-v2.png");
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 3rem;
+    line-height: 0.7;
+    background-size: cover; 
+    background-position: center; 
+} */
+
+#how-card {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    max-width: 90%; /* Constrain width */
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff1f8;
+    padding: 1.5rem; /* Reduced padding */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 1.5rem; /* Reduced gap */
+    line-height: 1.4; /* Adjusted line-height for readability */
+    background-image: url("../assets/howToCard.png");
+    background-size: cover; 
+    background-position: center;
+    overflow-y: auto; /* Enable scrolling within how-card */
+    color: #21064D;
+}
+
+#close-button {
+    background-color: #ffffff; /* Match the background color */
+    font-family: monospace; /* Match the font */
+    font-size: 20px; /* Adjust font size as needed */
+    color: #FF1887; /* White color for text */
+    padding: 1rem 2rem; /* Padding to make it look nice */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add slight rounding to corners */
+    cursor: pointer; /* Show pointer on hover */
+    font-weight: 600;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#close-button:hover {
+    background-color: rgb(179, 179, 179); /* Change background on hover */
+}
+
+#how-card span {
+    text-align: center;
+    font-size: 28px;
+    color: #FF1887;;
+    font-family: 'Fantasy', sans-serif;
+}
+
+#how-card h3 {
+    color: 21064D;;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+
+#how-card h4 {
+    color: 21064D;;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Text */
+#how-card p {
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Enemies and Power-ups styling */
+
+.enemies-section, .power-section {
+    display: flex;
+
+}
+
+.enemies, .power-ups {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.enemy-item, .power-up-item {
+    text-align: center;
+    width: 30%;
+}
+
+.enemy-item img, .power-up-item img {
+    max-width: 50px;
+    margin-bottom: 5px;
+}
 
 #game-over {
 background-color: #000000b2;
@@ -77,6 +303,7 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     0 0 0.2em #FF1887;
 }
 
+
 #restart-game {
     background-color: #ffffff; /* Match the background color */
     font-family: monospace; /* Match the font */
@@ -90,9 +317,6 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-#restart-game:hover {
-    background-color: rgb(179, 179, 179); /* Change background on hover */
-}
 
 
 #player {
@@ -129,44 +353,57 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     position: absolute;
     background-image: url("../assets/candyLighteningBolts.png");
     position: absolute;
-    background-size: cover; /* or contain */
-    background-position: center; /* Adjust as needed */
+    background-size: cover; 
+    background-position: center; 
 }
 
 .candy-bandit {
-    background-color: rgb(0, 0, 0);
-    height: 25px;
-    width: 25px;
+    height: 70px;
+    width: 70px;
     position: absolute;
+    background-image: url("../assets/candyBandit.png");
+    position: absolute;
+    background-size: cover; 
+    background-position: center; 
 }
 
 .candy-coin {
-    background-color: rgb(30, 255, 0);
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     position: absolute;
+    background-image: url("../assets/candyCoin.png");
+    position: absolute;
+    background-size: cover; 
+    background-position: center; 
 }
 
 .lollipop-token {
-    background-color: rgb(0, 255, 255);
-    height: 10px;
-    width: 10px;
+    height: 50px;
+    width: 50px;
     position: absolute;
+    background-image: url("../assets/lollipopToken.png");
+    position: absolute;
+    background-size: cover; 
+    background-position: center; 
 
 }
 
 .candy-heart {
-    background-color: rgb(255, 255, 255);
-    height: 15px;
-    width: 15px;
+    height: 40px;
+    width: 40px;
     position: absolute;
+    background-image: url("../assets/candyHeart.png");
+    background-size: cover; 
+    background-position: center; 
 }
 
 .bullet {
-    background-color: rgb(0, 0, 0);
+    background-image: url("../assets/bullet2.png");
     height: 15px;
     width: 15px;
     position: absolute;
+    background-size: cover; 
+    background-position: center; 
 }
 
 .game-stats {
