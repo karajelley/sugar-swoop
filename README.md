@@ -68,10 +68,5 @@ The Player can gain points by collecting candy. They can also gain lives by coll
 - player doesn't smoothly transition on vertical axis 
 - don't let interactables appear on top of one another
 
-## Left Off 
-- Add music
-- deploy again
-- fix how to bg image 
-- fix enemies and powerups spacing
-- fix scroll bar
-- how to font?
+
+

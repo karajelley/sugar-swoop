@@ -16,6 +16,7 @@ class CandyCoin extends Interactable {
     
     // Override the crash behavior
     handleCrash() {
+        playChingSound()
         game.increaseScore(10)
     }
 
@@ -48,6 +49,7 @@ class LollipopToken extends Interactable {
     
     // Override the crash behavior
     handleCrash() {
+        playChingSound()
         game.increaseScore(5)
     }
 
@@ -81,6 +83,7 @@ class CandyHeart extends Interactable {
     
     // Override the crash behavior
     handleCrash() {
+        playChingSound()
         game.increaseLives(1);
     }
 

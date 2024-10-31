@@ -11,8 +11,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Brandon';
+    src: url('../assets/Brandon/HvDTrial_Brandon_Text_Regular-BF6514e9eb617a0.otf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Bold';
+    src: url('../assets/Brandon/HvDTrial_Brandon_Text_Bold-BF6514e9eb720dc.otf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
 :root {
-    --main-font: 'Aura-Seraph', sans-serif;
+    --main-font: 'Aura-Seraph', Arial, Helvetica, sans-serif;
+    --secondary-font: 'Brandon', Arial, Helvetica, sans-serif;
+    --third-font: 'Brandon Bold', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -177,12 +193,35 @@ z-index: 1;
     border-radius: 20px;
     gap: 1.5rem; /* Reduced gap */
     line-height: 1.4; /* Adjusted line-height for readability */
-    background-image: url("../assets/how-to-card.png");
+    background-image: url("../assets/how-to-card3.png");
     background-size: cover; 
     background-position: center;
     overflow-y: auto; /* Enable scrolling within how-card */
     color: #21064D;
+    top: -50px;
 }
+
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0); /* Transparent background */
+  }
+
+::-webkit-scrollbar-thumb {
+background-color: #21064daa; /* Thumb color */
+border-radius: 10px;
+}
+
+/* Scrollbar thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+background-color: #555; /* Darker color on hover */
+}
+
+
 
 .how-card-content {
     margin: 100px;
@@ -210,6 +249,26 @@ z-index: 1;
     background-color: rgb(179, 179, 179); /* Change background on hover */
 }
 
+#start-game2 {
+    background-color: #FF1887; /* Match the background color */
+    font-family: monospace; /* Match the font */
+    font-size: 20px; /* Adjust font size as needed */
+    color: #ffffff; /* White color for text */
+    padding: 1rem 2rem; /* Padding to make it look nice */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add slight rounding to corners */
+    cursor: pointer; /* Show pointer on hover */
+    font-weight: 600;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    position: fixed;
+    bottom: 70px;
+}
+
+
+#start-game2:hover {
+    background-color: #D00667; /* Change background on hover */
+}
+
 #how-card span {
     text-align: center;
     font-size: 28px;
@@ -228,6 +287,7 @@ z-index: 1;
     color: 21064D;;
     margin-top: 60px;
     font-size: 24px;
+    font-family: var(--third-font);
 }
 
 
@@ -235,6 +295,7 @@ z-index: 1;
     color: #21064D;;
     margin-top: 20px;
     font-size: 18px;
+    font-family: var(--third-font)
 
 }
 
@@ -243,6 +304,7 @@ z-index: 1;
     margin-top: 10px;
     line-height: 1.6;
     font-size: 16px;
+    font-family: var(--secondary-font);
 }
 
 /* Enemies and Power-ups styling */
@@ -285,6 +347,8 @@ z-index: 1;
     text-align: center;
     width: 40%;
     margin: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 .enemy-item img, .power-up-item img {
@@ -469,7 +533,7 @@ text-align: center;
     font-weight: 600;
 }
 
-
+/* Animations */
 @keyframes shake {
     0% {
       transform: translateX(0);

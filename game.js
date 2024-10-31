@@ -24,7 +24,9 @@ class Game {
 
     updateLevel() {
       this.levelElement.innerText = this.level.toString();
-      if (this.level >= 5 ) {
+      if (this.level >= 2 ) {
+        setInterval(createCandyBandit, 15000);
+      } else if (this.level >= 5) {
         setInterval(createCandyLighteningBolt, 9000);
       }
       }

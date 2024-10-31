@@ -14,7 +14,8 @@ class CottonCandyCloud extends Interactable {
 
     // Override the crash behavior
     handleCrash() {
-
+        pauseBgSound();
+        playLoseSound()
         applyShake();
         game.isGameOver = true;
         game.gameOverScreen.style.display = "flex";
@@ -62,6 +63,7 @@ class CandyLighteningBolt extends Interactable {
     
     // Override the crash behavior
     handleCrash() {
+        playCrashSound()
         // Slow the player down
         player.speed = player.speed / 25; // Slow down the player
         setTimeout(() => {
@@ -98,7 +100,7 @@ class CandyBandit extends Interactable {
         element.innerText = "";
         super(element, speed);
 
-        this.speed = 10;
+/*         this.speed = 0.85; */
         this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
         this.height = this.element.offsetHeight; // Use offsetHeight to get the height
 
@@ -109,6 +111,7 @@ class CandyBandit extends Interactable {
     
     // Override the crash behavior
     handleCrash() {
+        playCrashSound()
         applyShake();
         player.speed = player.speed / 5; // Slow down the player
         setTimeout(() => {
@@ -126,10 +129,6 @@ class CandyBandit extends Interactable {
 }
 
 function createCandyBandit(){
-    let cB = new CandyBandit();
+    new CandyBandit(0.85);
     }
-//setInterval(createCandyBandit, 6000);
-setInterval(()=>{
-    createCandyBandit(),
-    CandyBandit(150)
-},6000)
+setInterval(createCandyBandit, 6000);

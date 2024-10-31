@@ -76,6 +76,7 @@ document.addEventListener("keydown", (e) => {
       });
 
       game.bulletArray.forEach((bullet) => {
+        playShootSound()
         bullet.move();
         game.interactableArray.forEach((interactable) => {
             if (crashBullet(bullet, interactable)) { // Assuming crashBullet takes both as parameters
@@ -89,6 +90,7 @@ document.addEventListener("keydown", (e) => {
       if (frames % 2000 === 0) {
         game.level++;
         game.updateLevel();
+    
         setInterval(createCandyLighteningBolt, 20000)
         setInterval(createCandyBandit, 10000);
         setInterval(createCottonCandyCloud, 30000);
@@ -124,12 +126,55 @@ document.addEventListener("keydown", (e) => {
  /*        appearPowElement(interactable.left, interactable.top); */
         if (game.lives <= 0) {
             game.isGameOver = true;
+            pauseBgSound();
             game.gameOverScreen.style.display = "flex";
           }
 
        // appearPowElement(enemy.left, enemy.top);
     }
 }
+
+const bgSound = document.getElementById('bg-sound');
+
+function playBgSound() {
+    bgSound.currentTime = 0; 
+    bgSound.play();
+}
+
+function pauseBgSound() {
+    bgSound.currentTime = 0; 
+    bgSound.pause();
+}
+
+const shootSound = document.getElementById('shoot-sound');
+
+function playShootSound() {
+    shootSound.currentTime = 0; 
+    shootSound.play();
+}
+
+const crashSound = document.getElementById('crash-sound');
+
+function playCrashSound() {
+    crashSound.currentTime = 0; 
+    crashSound.play();
+}
+
+const chingSound = document.getElementById('ching-sound');
+
+function playChingSound() {
+    chingSound.currentTime = 0; 
+    chingSound.play();
+}
+
+const loseSound = document.getElementById('lose-sound');
+
+function playLoseSound() {
+    loseSound.currentTime = 0; 
+    loseSound.play();
+}
+
+
 
 function crashBullet(bullet, interactable) {
     const bulletLeftEdge = bullet.left;
@@ -174,6 +219,7 @@ restartGame();
 /* START GAME */
 function startGame() {
 document.getElementById('game-start').style.display = 'none'; // Hide the start screen
+bgSound.play();
 game = new Game(); // Initialize the game
 player = new Player('#player', 5); // Initialize the player
 requestAnimationFrame(gameLoop); // Start the game loop
