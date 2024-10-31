@@ -53,7 +53,6 @@ z-index: 1;
 
 #game-start {
     background-color: rgba(250, 202, 219, 0.3);
-/*     background-image: url("../assets/startGame-layover-5.png"); */
     position: absolute;
     background-size: cover; 
     background-position: center; 
@@ -74,10 +73,6 @@ z-index: 1;
     height: 100vh;
     backdrop-filter: blur(5px);
     text-align: center;
-/*     text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
-        0 0 0.2em #FF1887; */
-        /*     text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
-        0 0 0.2em #FF1887; */
 }
 
 #start-card {
@@ -155,7 +150,6 @@ z-index: 1;
     left: 50%;
     z-index: 4;
     font-family: var(--main-font);
-    font-size: 150px;
     color: #FF1887;
     transform: translate(-50%, -50%);
     padding: 3rem;
@@ -183,7 +177,7 @@ z-index: 1;
     border-radius: 20px;
     gap: 1.5rem; /* Reduced gap */
     line-height: 1.4; /* Adjusted line-height for readability */
-    background-image: url("../assets/howToCard.png");
+    background-image: url("../assets/how-to-card.png");
     background-size: cover; 
     background-position: center;
     overflow-y: auto; /* Enable scrolling within how-card */
@@ -192,8 +186,8 @@ z-index: 1;
 
 .how-card-content {
     margin: 100px;
-    margin-top: 0px;
     margin-bottom: 30px;
+    margin-top: 0px;
 }
 
 #close-button {
@@ -294,7 +288,7 @@ z-index: 1;
 }
 
 .enemy-item img, .power-up-item img {
-    max-width: 100px;
+    max-width: 80px;
     margin-bottom: 5px;
 }
 

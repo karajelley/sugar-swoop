@@ -98,6 +98,7 @@ class CandyBandit extends Interactable {
         element.innerText = "";
         super(element, speed);
 
+        this.speed = 10;
         this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
         this.height = this.element.offsetHeight; // Use offsetHeight to get the height
 
@@ -125,6 +126,10 @@ class CandyBandit extends Interactable {
 }
 
 function createCandyBandit(){
-    new CandyBandit(.85);
+    let cB = new CandyBandit();
     }
-setInterval(createCandyBandit, 6000);
+//setInterval(createCandyBandit, 6000);
+setInterval(()=>{
+    createCandyBandit(),
+    CandyBandit(150)
+},6000)

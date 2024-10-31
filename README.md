@@ -69,11 +69,9 @@ The Player can gain points by collecting candy. They can also gain lives by coll
 - don't let interactables appear on top of one another
 
 ## Left Off 
-- Deploy as live versions usually always have bugs.
-- Does my player need to be able to officially win? Scoring points? + level ups?
-- Change game over screen to match start screen
-- Fix how to screen (scrolling, general formatting. add font, cancel button?) .enemies-section, .power-section
-- Add screen shake on crash
 - Add music
-
-- full path and or there might be an issue with sugar swoop folder being two words
+- deploy again
+- fix how to bg image 
+- fix enemies and powerups spacing
+- fix scroll bar
+- how to font?
