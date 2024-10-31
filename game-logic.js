@@ -219,6 +219,7 @@ restartGame();
 /* START GAME */
 function startGame() {
 document.getElementById('game-start').style.display = 'none'; // Hide the start screen
+document.getElementById('how-screen').style.display = 'none'
 bgSound.play();
 game = new Game(); // Initialize the game
 player = new Player('#player', 5); // Initialize the player
@@ -227,6 +228,9 @@ requestAnimationFrame(gameLoop); // Start the game loop
 
 const startButtonElement = document.getElementById('start-game');
 startButtonElement.addEventListener('click', startGame);
+
+const start2ButtonElement = document.getElementById('start-game2');
+start2ButtonElement.addEventListener('click', startGame);
 
 function displayHowToPlay() {
     document.getElementById('how-screen').style.display = 'flex';
