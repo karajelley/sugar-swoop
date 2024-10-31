@@ -15,6 +15,7 @@ class CottonCandyCloud extends Interactable {
     // Override the crash behavior
     handleCrash() {
 
+        applyShake();
         game.isGameOver = true;
         game.gameOverScreen.style.display = "flex";
         // Slow the player down
@@ -107,6 +108,7 @@ class CandyBandit extends Interactable {
     
     // Override the crash behavior
     handleCrash() {
+        applyShake();
         player.speed = player.speed / 5; // Slow down the player
         setTimeout(() => {
             player.speed *= 5; // Restore speed after 5 seconds or any desired duration
@@ -123,6 +125,6 @@ class CandyBandit extends Interactable {
 }
 
 function createCandyBandit(){
-    new CandyBandit(1);
+    new CandyBandit(.85);
     }
 setInterval(createCandyBandit, 6000);

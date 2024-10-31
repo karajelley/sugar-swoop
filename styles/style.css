@@ -167,39 +167,16 @@ z-index: 1;
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(5px);
-    text-align: center;
 }
-
-/* #how-card {
-    display: flex;
-    max-width: 1000px;
-    height: auto;
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff1f8;
-    background-image: url("../assets/startCard-v2.png");
-    padding: 2rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    gap: 3rem;
-    line-height: 0.7;
-    background-size: cover; 
-    background-position: center; 
-} */
 
 #how-card {
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
     max-height: 70vh;
     max-width: 90%; /* Constrain width */
     position: relative;
     margin: auto;
     padding: 20px;
     background-color: #fff1f8;
-    padding: 1.5rem; /* Reduced padding */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -213,16 +190,25 @@ z-index: 1;
     color: #21064D;
 }
 
+.how-card-content {
+    margin: 100px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
 #close-button {
-    background-color: #ffffff; /* Match the background color */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff1f8;/* Match the background color */
     font-family: monospace; /* Match the font */
     font-size: 20px; /* Adjust font size as needed */
-    color: #FF1887; /* White color for text */
-    padding: 1rem 2rem; /* Padding to make it look nice */
+    color: #000000; /* White color for text */
+    padding: .5rem 1rem; /* Padding to make it look nice */
     border: none; /* Remove default border */
     border-radius: 5px; /* Add slight rounding to corners */
     cursor: pointer; /* Show pointer on hover */
-    font-weight: 600;
+    font-weight: 800;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
@@ -237,17 +223,25 @@ z-index: 1;
     font-family: 'Fantasy', sans-serif;
 }
 
+
+#how-title {
+    font-family: var(--main-font) !important;
+    color: #FF1887;
+    font-size: 84px !important;
+}
+
 #how-card h3 {
     color: 21064D;;
-    margin-top: 20px;
+    margin-top: 60px;
     font-size: 24px;
 }
 
 
 #how-card h4 {
-    color: 21064D;;
+    color: #21064D;;
     margin-top: 20px;
     font-size: 18px;
+
 }
 
 /* Text */
@@ -259,24 +253,44 @@ z-index: 1;
 
 /* Enemies and Power-ups styling */
 
-.enemies-section, .power-section {
+.enemies-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 10px;
 
 }
 
-.enemies, .power-ups {
+.power-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+
+}
+
+.enemies {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
 
-.enemy-item, .power-up-item {
+.power-ups {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.enemy-item {
     text-align: center;
     width: 30%;
+}
+
+.power-up-item {
+    text-align: center;
+    width: 40%;
+    margin: 10px;
 }
 
 .enemy-item img, .power-up-item img {
@@ -285,14 +299,16 @@ z-index: 1;
 }
 
 #game-over {
-background-color: #000000b2;
+background-color: rgba(250, 202, 219, 0.3);
 position: absolute;
+background-size: cover; 
+background-position: center; 
 top: 50%;
 left: 50%;
 z-index: 4;
-font-family: monospace;
-font-size: 60px;
-color: rgb(255, 255, 255);
+font-family: var(--main-font);
+font-size: 150px;
+color: #FF1887;
 transform: translate(-50%, -50%);
 padding: 3rem;
 flex-direction: column;
@@ -303,16 +319,32 @@ display: none;
 width: 100vw;
 height: 100vh;
 backdrop-filter: blur(2px);
-text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
-    0 0 0.2em #FF1887;
+text-align: center;
+}
+
+#game-over-card {
+    display: flex;
+    height: 300px;
+    width: 700px;
+    background-color: #fff1f8;
+    background-image: url("../assets/game-over-card.png");
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 2rem;
+    line-height: 0.7;
+    background-size: cover; 
+    background-position: center; 
 }
 
 
 #restart-game {
-    background-color: #ffffff; /* Match the background color */
+    background-color: #FF1887; /* Match the background color */
     font-family: monospace; /* Match the font */
     font-size: 20px; /* Adjust font size as needed */
-    color: #FF1887; /* White color for text */
+    color: #ffffff; /* White color for text */
     padding: 1rem 2rem; /* Padding to make it look nice */
     border: none; /* Remove default border */
     border-radius: 5px; /* Add slight rounding to corners */
@@ -321,6 +353,9 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
+#restart-game:hover {
+    background-color: #D00667; /* Change background on hover */
+}
 
 
 #player {
@@ -396,7 +431,7 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     height: 40px;
     width: 40px;
     position: absolute;
-    background-image: url("../assets/candyHeart2.png");
+    background-image: url("../assets/candyHeart3.png");
     background-size: cover; 
     background-position: center; 
 }
@@ -439,6 +474,30 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     font-size: 18px;
     font-weight: 600;
 }
+
+
+@keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(30px);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(-30px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .shake {
+    animation: shake 300ms;
+  }
+  
 
 
 

@@ -198,7 +198,14 @@ function closeHowToPlay() {
 const closeButtonElement = document.getElementById('close-button');
 closeButtonElement.addEventListener('click', closeHowToPlay);
 
+function applyShake() {
+    console.log("Apply Shake");
+    game.gameArea.classList.add("shake");
 
+    setTimeout(() => {
+        game.gameArea.classList.remove("shake");
+    }, 300);
+}
 /*   function appearPowElement(left, top) {
     const powElement = document.createElement("div");
     powElement.classList.add("pow");

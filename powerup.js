@@ -90,6 +90,6 @@ class CandyHeart extends Interactable {
 }
 
 function createCandyHeart(){
-    new CandyHeart(1);
+    new CandyHeart(0.8);
     }
-setInterval(createCandyHeart, 12000);
+setInterval(createCandyHeart, 12550);
