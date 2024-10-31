@@ -33,7 +33,7 @@ class CottonCandyCloud extends Interactable {
     }
 
     handleBullet() {
-        game.increaseScore(5);
+        game.increaseScore(20);
     }
     
 }
@@ -122,8 +122,7 @@ class CandyBandit extends Interactable {
     }
 
     handleBullet() {
-        // Slow the player down
-        game.increaseScore(20);
+        game.increaseScore(5);
     }
     
 }
