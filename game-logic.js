@@ -89,9 +89,9 @@ document.addEventListener("keydown", (e) => {
       if (frames % 2000 === 0) {
         game.level++;
         game.updateLevel();
-        setInterval(createCandyLighteningBolt, 30000)
+        setInterval(createCandyLighteningBolt, 20000)
         setInterval(createCandyBandit, 10000);
-        setInterval(createCandyCoin, 20000)
+        setInterval(createCottonCandyCloud, 30000);
       } 
 
       

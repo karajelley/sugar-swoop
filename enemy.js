@@ -14,8 +14,11 @@ class CottonCandyCloud extends Interactable {
 
     // Override the crash behavior
     handleCrash() {
+
+        game.isGameOver = true;
+        game.gameOverScreen.style.display = "flex";
         // Slow the player down
-        player.speed = player.speed / 5; // Slow down the player
+/*         player.speed = player.speed / 5; // Slow down the player
         setTimeout(() => {
             player.speed *= 5; // Restore speed after 5 seconds or any desired duration
         }, 3000);
@@ -24,7 +27,7 @@ class CottonCandyCloud extends Interactable {
         } else {
             game.score = 0;
             game.updateScore();
-        }
+        } */
     }
 
     handleBullet() {
@@ -36,7 +39,7 @@ class CottonCandyCloud extends Interactable {
 function createCottonCandyCloud(){
     new CottonCandyCloud(1);
     }
-setInterval(createCottonCandyCloud, 6000);
+setInterval(createCottonCandyCloud, 10000);
 
 
 //// Candy Lightning Bolts class inheriting from Interactable
@@ -80,7 +83,7 @@ class CandyLighteningBolt extends Interactable {
 function createCandyLighteningBolt(){
     new CandyLighteningBolt(.75);
     }
-setInterval(createCandyLighteningBolt, 9000);
+/* setInterval(createCandyLighteningBolt, 9000); */
 
 
 
@@ -104,11 +107,16 @@ class CandyBandit extends Interactable {
     
     // Override the crash behavior
     handleCrash() {
-        // Slow the player down
+        player.speed = player.speed / 5; // Slow down the player
+        setTimeout(() => {
+            player.speed *= 5; // Restore speed after 5 seconds or any desired duration
+        }, 3000);
+        // Lose a life
         game.decreaseLives(1);
     }
 
     handleBullet() {
+        // Slow the player down
         game.increaseScore(20);
     }
     
@@ -117,4 +125,4 @@ class CandyBandit extends Interactable {
 function createCandyBandit(){
     new CandyBandit(1);
     }
-setInterval(createCandyBandit, 10000);
+setInterval(createCandyBandit, 6000);

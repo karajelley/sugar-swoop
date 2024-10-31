@@ -69,10 +69,13 @@ The Player can gain points by collecting candy. They can also gain lives by coll
 - don't let interactables appear on top of one another
 
 ## Left Off 
+- Deploy as live versions usually always have bugs.
 - Does my player need to be able to officially win? Scoring points? + level ups?
 - Get better icon for bullet, player, heart, etc.
 - change levels, wait to call functions for certain levels using a conditional?
 - Change game over screen to match start screen
-- Fix how to screen (scrolling, general formatting. add font, cancel button?)
+- Fix how to screen (scrolling, general formatting. add font, cancel button?) .enemies-section, .power-section
 - Add screen shake on crash
 - Add music
+
+- Stand up - ask about deploying 

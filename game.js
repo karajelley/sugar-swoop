@@ -2,7 +2,7 @@ class Game {
     constructor() {
       this.isGameOver = false;
       this.score = 0;
-      this.lives = 1;
+      this.lives = 5;
       this.level = 1;
       this.gameArea = document.querySelector("#game-area");
       this.width = this.gameArea.getBoundingClientRect().width;
@@ -24,6 +24,9 @@ class Game {
 
     updateLevel() {
       this.levelElement.innerText = this.level.toString();
+      if (this.level >= 5 ) {
+        setInterval(createCandyLighteningBolt, 9000);
+      }
       }
 
 

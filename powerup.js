@@ -27,7 +27,7 @@ class CandyCoin extends Interactable {
 function createCandyCoin(){
     new CandyCoin(1);
     }
-setInterval(createCandyCoin, 3500);
+/* setInterval(createCandyCoin, 3500); */
 
 
 // Lollipop Token class inheriting from Interactable
@@ -57,9 +57,9 @@ class LollipopToken extends Interactable {
 }
 
 function createLollipopToken(){
-    new LollipopToken(1.5);
+    new LollipopToken(1);
     }
-setInterval(createLollipopToken, 8000);
+setInterval(createLollipopToken, 3050);
 
 
 
@@ -90,6 +90,6 @@ class CandyHeart extends Interactable {
 }
 
 function createCandyHeart(){
-    new CandyHeart(1.5);
+    new CandyHeart(1);
     }
-setInterval(createCandyHeart, 9000);
+setInterval(createCandyHeart, 12000);

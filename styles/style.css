@@ -148,7 +148,6 @@ z-index: 1;
 
 #how-screen {
     background-color: rgba(250, 202, 219, 0.3);
-
     position: absolute;
     background-size: cover; 
     background-position: center; 
@@ -194,6 +193,7 @@ z-index: 1;
 #how-card {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
+    max-height: 70vh;
     max-width: 90%; /* Constrain width */
     position: relative;
     margin: auto;
@@ -261,6 +261,10 @@ z-index: 1;
 
 .enemies-section, .power-section {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
 }
 
@@ -276,7 +280,7 @@ z-index: 1;
 }
 
 .enemy-item img, .power-up-item img {
-    max-width: 50px;
+    max-width: 100px;
     margin-bottom: 5px;
 }
 
@@ -320,7 +324,7 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
 
 
 #player {
-    background-image: url("../assets/player-v1.png");
+    background-image: url("../assets/player-v4.png");
     position: absolute;
     background-size: cover; /* or contain */
     background-position: center; /* Adjust as needed */
@@ -340,7 +344,7 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     height: 65px;
     width: 65px;
     position: absolute;
-    background-image: url("../assets/candyCaneCloud.png");
+    background-image: url("../assets/cottonCandyCloud.png");
     position: absolute;
     background-size: cover; /* or contain */
     background-position: center; /* Adjust as needed */
@@ -392,7 +396,7 @@ text-shadow: 1px 1px 2px #000000, 0 0 1em #FF1887,
     height: 40px;
     width: 40px;
     position: absolute;
-    background-image: url("../assets/candyHeart.png");
+    background-image: url("../assets/candyHeart2.png");
     background-size: cover; 
     background-position: center; 
 }
