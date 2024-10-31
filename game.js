@@ -26,7 +26,7 @@ class Game {
       this.levelElement.innerText = this.level.toString();
       if (this.level >= 2 ) {
         setInterval(createCandyBandit, 15000);
-      } else if (this.level >= 5) {
+      } else if (this.level >= 2) {
         setInterval(createCandyLighteningBolt, 9000);
       }
       }
