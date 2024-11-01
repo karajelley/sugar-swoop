@@ -3,12 +3,12 @@ class CottonCandyCloud extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
         element.className = "cotton-candy-cloud";
-        element.innerText = ""; // Add visual representation
-        super(element, speed); // Initialize the base class
-        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
-        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+        element.innerText = ""; 
+        super(element, speed); 
+        this.width = this.element.offsetWidth;  
+        this.height = this.element.offsetHeight; 
 
-        this.updatePosition(); // Set initial position
+        this.updatePosition(); 
 
     }
 
@@ -19,17 +19,6 @@ class CottonCandyCloud extends Interactable {
         applyShake();
         game.isGameOver = true;
         game.gameOverScreen.style.display = "flex";
-        // Slow the player down
-/*         player.speed = player.speed / 5; // Slow down the player
-        setTimeout(() => {
-            player.speed *= 5; // Restore speed after 5 seconds or any desired duration
-        }, 3000);
-        if (game.score >= 5) {
-            game.decreaseScore(5)
-        } else {
-            game.score = 0;
-            game.updateScore();
-        } */
     }
 
     handleBullet() {
@@ -53,10 +42,10 @@ class CandyLighteningBolt extends Interactable {
         element.innerText = "";
         super(element, speed);
 
-        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
-        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+        this.width = this.element.offsetWidth;  
+        this.height = this.element.offsetHeight; 
 
-        this.updatePosition(); // Set initial position
+        this.updatePosition(); 
 
     }
 
@@ -64,10 +53,9 @@ class CandyLighteningBolt extends Interactable {
     // Override the crash behavior
     handleCrash() {
         playCrashSound()
-        // Slow the player down
-        player.speed = player.speed / 25; // Slow down the player
+        player.speed = player.speed / 25; 
         setTimeout(() => {
-            player.speed *= 25; // Restore speed after 5 seconds or any desired duration
+            player.speed *= 25; 
         }, 3000);
         if (game.score > 10) {
             game.decreaseScore(10)
@@ -86,7 +74,8 @@ class CandyLighteningBolt extends Interactable {
 function createCandyLighteningBolt(){
     new CandyLighteningBolt(.75);
     }
-/* setInterval(createCandyLighteningBolt, 9000); */
+/* setInterval(createCandyLighteningBolt, 9000);
+Currently, they are set to appear at higher levels */
 
 
 
@@ -100,11 +89,10 @@ class CandyBandit extends Interactable {
         element.innerText = "";
         super(element, speed);
 
-/*         this.speed = 0.85; */
-        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
-        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+        this.width = this.element.offsetWidth;  
+        this.height = this.element.offsetHeight; 
 
-        this.updatePosition(); // Set initial position
+        this.updatePosition(); 
 
     }
 
@@ -113,11 +101,10 @@ class CandyBandit extends Interactable {
     handleCrash() {
         playCrashSound()
         applyShake();
-        player.speed = player.speed / 5; // Slow down the player
+        player.speed = player.speed / 5; 
         setTimeout(() => {
-            player.speed *= 5; // Restore speed after 5 seconds or any desired duration
+            player.speed *= 5; 
         }, 3000);
-        // Lose a life
         game.decreaseLives(1);
     }
 

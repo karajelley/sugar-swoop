@@ -1,4 +1,5 @@
 # Sugar Swoop
+Game Link: https://karajelley.github.io/sugar-swoop/
 
 ## Description
 
@@ -64,9 +65,6 @@ The Player can gain points by collecting candy. They can also gain lives by coll
 - Create gamae logic
 - Style characters, game area and gameplay.
 
-## Bugs
-- player doesn't smoothly transition on vertical axis 
-- don't let interactables appear on top of one another
 
 
 

@@ -1,15 +1,16 @@
 // Candy Coin class inheriting from Interactable
+// **Not currently being used in the game
 class CandyCoin extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
         element.className = "candy-coin";
-        element.innerText = ""; // Add visual representation
-        super(element, speed); // Initialize the base class
+        element.innerText = ""; 
+        super(element, speed); 
 
-        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
-        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+        this.width = this.element.offsetWidth;  
+        this.height = this.element.offsetHeight; 
 
-        this.updatePosition(); // Set initial position
+        this.updatePosition(); 
 
     }
 
@@ -28,7 +29,8 @@ class CandyCoin extends Interactable {
 function createCandyCoin(){
     new CandyCoin(1);
     }
-/* setInterval(createCandyCoin, 3500); */
+/* setInterval(createCandyCoin, 3500);
+   Not currently featured in the game */
 
 
 // Lollipop Token class inheriting from Interactable
@@ -36,13 +38,13 @@ class LollipopToken extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
         element.className = "lollipop-token";
-        element.innerText = ""; // Add visual representation
-        super(element, speed); // Initialize the base class
+        element.innerText = ""; 
+        super(element, speed); 
 
-        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
-        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+        this.width = this.element.offsetWidth;  
+        this.height = this.element.offsetHeight; 
 
-        this.updatePosition(); // Set initial position
+        this.updatePosition(); 
 
     }
 
@@ -70,13 +72,13 @@ class CandyHeart extends Interactable {
     constructor(speed) {
         const element = document.createElement("div");
         element.className = "candy-heart";
-        element.innerText = ""; // Add visual representation
-        super(element, speed); // Initialize the base class
+        element.innerText = ""; 
+        super(element, speed); 
 
-        this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
-        this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+        this.width = this.element.offsetWidth;  
+        this.height = this.element.offsetHeight; 
 
-        this.updatePosition(); // Set initial position
+        this.updatePosition(); 
 
     }
 

@@ -2,7 +2,7 @@
 
 
 window.onload = function() {
-    document.getElementById('game-start').style.display = 'flex'; // Show the start screen
+    document.getElementById('game-start').style.display = 'flex'; 
 };
 
 
@@ -44,13 +44,13 @@ document.addEventListener("keydown", (e) => {
     }
   });
 
-
+/* Shooting Functionality */
   let isShooting = false; // To track if the space bar is pressed
 
     // Keydown event for shooting
     document.addEventListener('keydown', (event) => {
         if (event.code === 'Space') {
-            isShooting = true; // Set to true when the space bar is pressed
+            isShooting = true; 
             createBullet();
         }
     });
@@ -58,11 +58,11 @@ document.addEventListener("keydown", (e) => {
     // Keyup event to stop shooting
     document.addEventListener('keyup', (event) => {
         if (event.code === 'Space') {
-            isShooting = false; // Set to false when the space bar is released
+            isShooting = false; 
         }
     });
 
-
+/* Game Loop */
   let frames = 0;
 
   function gameLoop() {
@@ -79,14 +79,14 @@ document.addEventListener("keydown", (e) => {
         playShootSound()
         bullet.move();
         game.interactableArray.forEach((interactable) => {
-            if (crashBullet(bullet, interactable)) { // Assuming crashBullet takes both as parameters
-                interactable.handleBullet(bullet); // Trigger unique behavior for the bullet
-                interactable.destroy(); // Destroy the interactable on collision
-                bullet.destroy(); // Destroy the bullet on collision
+            if (crashBullet(bullet, interactable)) { 
+                interactable.handleBullet(bullet); 
+                interactable.destroy(); 
+                bullet.destroy(); 
             }
         });
       })
-
+      /* Level Change */
       if (frames % 2000 === 0) {
         game.level++;
         game.updateLevel();
@@ -100,9 +100,8 @@ document.addEventListener("keydown", (e) => {
       requestAnimationFrame(gameLoop);
     }
   }
-  
- /*  requestAnimationFrame(gameLoop); */
 
+  /* Player vs Interactable Crash */
 
   function crashTest(interactable) {
     const playerLeftEdge = player.left;
@@ -123,16 +122,43 @@ document.addEventListener("keydown", (e) => {
     ) {
         interactable.handleCrash(); 
         interactable.destroy();
- /*        appearPowElement(interactable.left, interactable.top); */
+
         if (game.lives <= 0) {
             game.isGameOver = true;
             pauseBgSound();
             game.gameOverScreen.style.display = "flex";
           }
 
-       // appearPowElement(enemy.left, enemy.top);
     }
 }
+
+
+
+/* Bullet vs Interactable Crash */
+function crashBullet(bullet, interactable) {
+    const bulletLeftEdge = bullet.left;
+    const bulletRightEdge = bullet.left + bullet.width;
+    const bulletTopEdge = bullet.top;
+    const bulletBottomEdge = bullet.top + bullet.height;
+    
+    const interactableLeftEdge = interactable.left;
+    const interactableRightEdge = interactable.left + interactable.width;
+    const interactableTopEdge = interactable.top; 
+    const interactableBottomEdge = interactable.top + interactable.height;
+    
+    if (
+        bulletLeftEdge < interactableRightEdge &&
+        bulletRightEdge > interactableLeftEdge &&
+        bulletTopEdge < interactableBottomEdge &&
+        bulletBottomEdge > interactableTopEdge
+    ) {
+        bullet.destroy();
+        interactable.destroy();
+        interactable.handleBullet();
+    }
+}
+
+/* Audio Functions  */
 
 const bgSound = document.getElementById('bg-sound');
 
@@ -172,31 +198,6 @@ const loseSound = document.getElementById('lose-sound');
 function playLoseSound() {
     loseSound.currentTime = 0; 
     loseSound.play();
-}
-
-
-
-function crashBullet(bullet, interactable) {
-    const bulletLeftEdge = bullet.left;
-    const bulletRightEdge = bullet.left + bullet.width;
-    const bulletTopEdge = bullet.top;
-    const bulletBottomEdge = bullet.top + bullet.height;
-
-    const interactableLeftEdge = interactable.left;
-    const interactableRightEdge = interactable.left + interactable.width;
-    const interactableTopEdge = interactable.top; 
-    const interactableBottomEdge = interactable.top + interactable.height;
-
-    if (
-        bulletLeftEdge < interactableRightEdge &&
-        bulletRightEdge > interactableLeftEdge &&
-        bulletTopEdge < interactableBottomEdge &&
-        bulletBottomEdge > interactableTopEdge
-    ) {
-        bullet.destroy();
-        interactable.destroy();
-        interactable.handleBullet();
-    }
 }
 
 
@@ -256,18 +257,6 @@ function applyShake() {
         game.gameArea.classList.remove("shake");
     }, 300);
 }
-/*   function appearPowElement(left, top) {
-    const powElement = document.createElement("div");
-    powElement.classList.add("pow");
-    powElement.style.left = left + "px";
-    powElement.style.top = top + "px";
-    game.gameArea.appendChild(powElement);
-    game.gameArea.classList.add("shake");
-  
-    setTimeout(() => {
-      powElement.remove();
-      game.gameArea.classList.remove("shake");
-    }, 300);
-  } */
+
 
 

@@ -4,17 +4,17 @@ class Player extends Character {
     this.top = (game.height / 2) - (this.element.offsetHeight / 2); 
     this.left = (game.width / 2) - (this.element.offsetWidth / 2); 
 
-    this.width = this.element.offsetWidth;  // Use offsetWidth to get the width
-    this.height = this.element.offsetHeight; // Use offsetHeight to get the height
+    this.width = this.element.offsetWidth; 
+    this.height = this.element.offsetHeight; 
 
-    this.updatePosition(); // Set initial position
+    this.updatePosition(); 
     }
 
     move() {
         switch (this.direction) {
             case "up":
               if (this.top <= 0) {
-                this.top = 0; // we make sure the player stays at position top 0 and not at -10...
+                this.top = 0; 
               } else {
                 this.top -= this.speed;
               }
@@ -42,9 +42,8 @@ class Player extends Character {
               break;
           }
 
-          this.updatePosition(this.element); // Update the player's position on the screen
+          this.updatePosition(this.element); 
     }
 }
 
-// we create the new player to keep track of all the properties
 let player = new Player('#player', 5);
