@@ -1,70 +1,42 @@
-# Sugar Swoop
-Game Link: https://karajelley.github.io/sugar-swoop/
+# Sugar Swoop 🍬
 
-## Description
+[Play the Game Here!](https://karajelley.github.io/sugar-swoop/)
 
-Single player game. The player has the ability to move up, down, left and right. The player must dodge or shoot the enemies that are coming from the bottom of the screen. The player can also collect sweets for points and hearts (lives) to stay in the game longer. 
+## 🎮 Description
 
-## Classes
+**Sugar Swoop** is a fast-paced, single-player arcade game where you control a sweet, daring character navigating a candy-filled world. Move in all directions, shoot enemies, collect tasty treats for points, and grab hearts to keep your lives intact. Dodge or defeat colorful enemies and see how long you can last in this sugary showdown!
 
-### Character
+## 💡 Features
 
-This class will have the following attributes:
+- **Character Movement**: Move the player up, down, left, and right.
+- **Shooting Mechanism**: Fire peppermint bullets to defeat enemies.
+- **Enemies**: Dodge or eliminate enemies like Cotton Candy Clouds and Candy Bandits.
+- **Power-ups**: Collect candy coins, lollipop tokens, and candy hearts for points and extra lives.
+- **Scoring**: Earn points by collecting candy and additional lives by grabbing hearts.
 
-- x: the x-axis position of the character (horizontal axis)
-- y: the y-axis  position of the character (vertical axis)
-- speed: the speed of the character
-- width: the width of the character
-- height: the height of the character
-- element: the html element
+## 🕹️ Gameplay
 
-This class will have two extendend classes:
+- **Objective**: Survive as long as possible while dodging enemies and collecting power-ups.
+- **Player Movement**: Control the player to avoid incoming enemies and shoot peppermint bullets.
+- **Enemies**: Different types, each with unique effects (slow down the player or take away points/lives).
+- **Power-ups**: Collect them to boost your score or gain extra lives.
 
-#### Player
+## ⚙️ Technologies Used
 
-The player has the ability to move up, down, left and right. The player will also have the ability to shoot peppermint bullets at the candy bandits to make the dissapear. 
+- **HTML5**: For the structure of the game and rendering the game area.
+- **CSS3**: For styling the game layout and creating a visually appealing design.
+- **JavaScript**: For game logic, character movement, shooting, and interaction.
+- **DOM Manipulation**: To dynamically update the game and interact with HTML elements.
+- **GitHub Pages**: For hosting and deploying the game online.
 
-#### Interactable 
+## 🚀 How to Play
 
-The game will have two types of interactables enemies and power-ups. 
+1. Click the link above to start the game.
+2. Use the arrow keys to move the player.
+3. Press the spacebar to shoot peppermint bullets.
+4. Collect candy for points and hearts for extra lives.
+5. Dodge or shoot the enemies to avoid losing lives.
 
-##### Enemy
+## 📧 Contact
 
-The game will have three different types of enemies.
--Cotten Candy Clouds: Slows the player down and removes points
--Candy Lightning Bolts: Slows the player down significantly and removes points
--Candy Bandits: Cause the player to lose a life
-
-##### PowerUps
-The game will have three different types of powerups.
--Candy Coins: Gives the player 10 points
--Lollipop Tokens: Gives the player 5 points
--Candy Hearts: Gives players an extra life
-
-### Game
-
-The game class controls all the game logic. It will have the following attributes:
-
-- isgameover: a boolean that will be true when the game is over
-- player: the player object
-- interactables: an array of interactables
-- bullets: an array of bullets
-- lives: the number of lives the player has
-- gameArea: the html element that will contain the game
-
-## Scoring Points
-
-The Player can gain points by collecting candy. They can also gain lives by collecting hearts. 
-
-## Tasks
-
-- Create the html with the game area and the player
-- Create player class and methods
-- Create interactables class and methods
-- Create bullet class and methods
-- Create gamae logic
-- Style characters, game area and gameplay.
-
-
-
-
+You can reach me at [karajelley@gmail.com](mailto:karajelley@gmail.com) for any inquiries or feedback.
