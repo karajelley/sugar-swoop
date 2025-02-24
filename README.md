@@ -40,3 +40,11 @@
 ## 📧 Contact
 
 You can reach me at [karajelley@gmail.com](mailto:karajelley@gmail.com) for any inquiries or feedback.
+
+## Screenshots
+
+<p align="center">
+  <img src="sugarswoop_gameplay_screenshot_01.png" width="45%" style="margin-right: 10px;">
+  <img src="sugarswoop_gameplay_screenshot_02.png" width="45%">
+</p>
+
