@@ -37,7 +37,7 @@
 4. Collect candy for points and hearts for extra lives.
 5. Dodge or shoot the enemies to avoid losing lives.
 
-## 📧 Contact
+## 📬 Contact
 
 You can reach me at [karajelley@gmail.com](mailto:karajelley@gmail.com) for any inquiries or feedback.
 
